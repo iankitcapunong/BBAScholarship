@@ -100,6 +100,20 @@
       .logo-corner.right {
         right: 30px;
       }
+      @media (max-width: 600px) {
+        .logo-corner {
+          top: 14px;
+          width: 56px;
+          height: 56px;
+        }
+        .logo-corner.left {
+          left: 12px;
+          width: 110px;
+        }
+        .logo-corner.right {
+          right: 12px;
+        }
+      }
       .eyebrow {
         display: inline-block;
         font-weight: 800;
@@ -904,6 +918,17 @@
           right: 0;
         }
       }
+      @media (max-width: 600px) {
+        .vt-card {
+          flex: 0 0 200px;
+        }
+        .ba-card {
+          flex: 0 0 220px;
+        }
+        .hero h1 {
+          font-size: clamp(24px, 7vw, 32px);
+        }
+      }
     </style>
   </head>
   <body>
@@ -1223,7 +1248,7 @@
         <div class="scroller" id="vtest">
           <div class="vt-card">
             <video
-              preload="metadata"
+              preload="auto"
               playsinline
               src="Video/dan_t%20(720p).mp4#t=0.1"
             ></video>
@@ -1237,7 +1262,7 @@
 
           <div class="vt-card">
             <video
-              preload="metadata"
+              preload="auto"
               playsinline
               src="Video/caroline_h%20(720p).mp4#t=0.1"
             ></video>
@@ -1251,7 +1276,7 @@
 
           <div class="vt-card">
             <video
-              preload="metadata"
+              preload="auto"
               playsinline
               src="Video/dan_w%20(720p).mp4#t=0.1"
             ></video>
@@ -1265,7 +1290,7 @@
 
           <div class="vt-card">
             <video
-              preload="metadata"
+              preload="auto"
               playsinline
               src="Video/linda_m%20(720p).mp4#t=0.1"
             ></video>
@@ -1279,7 +1304,7 @@
 
           <div class="vt-card">
             <video
-              preload="metadata"
+              preload="auto"
               playsinline
               src="Video/matt_o%20(720p).mp4#t=0.1"
             ></video>
@@ -1293,7 +1318,7 @@
 
           <div class="vt-card">
             <video
-              preload="metadata"
+              preload="auto"
               playsinline
               src="Video/michelle_f.mp4%20(720p).mp4#t=0.1"
             ></video>
@@ -1307,7 +1332,7 @@
 
           <div class="vt-card">
             <video
-              preload="metadata"
+              preload="auto"
               playsinline
               src="Video/russ_g%20(720p).mp4#t=0.1"
             ></video>
@@ -1321,7 +1346,7 @@
 
           <div class="vt-card">
             <video
-              preload="metadata"
+              preload="auto"
               playsinline
               src="Video/sophie_h%20(720p).mp4#t=0.1"
             ></video>
@@ -1335,7 +1360,7 @@
 
           <div class="vt-card">
             <video
-              preload="metadata"
+              preload="auto"
               playsinline
               src="Video/terry_h%20(720p).mp4#t=0.1"
             ></video>
@@ -1349,7 +1374,7 @@
 
           <div class="vt-card">
             <video
-              preload="metadata"
+              preload="auto"
               playsinline
               src="Video/beck_p%20(720p).mp4#t=0.1"
             ></video>
@@ -1682,7 +1707,7 @@
         // posted within a couple of seconds.
         var vtQueue = Array.from(document.querySelectorAll(".vt-card video"));
         var vtInFlight = 0;
-        var VT_MAX = 5;
+        var VT_MAX = 6;
 
         function vtPump() {
           while (vtInFlight < VT_MAX && vtQueue.length) {
