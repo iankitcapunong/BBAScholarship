@@ -694,7 +694,8 @@
         color: var(--accent);
       }
       .field input,
-      .field textarea {
+      .field textarea,
+      .field select {
         width: 100%;
         background: var(--bg);
         border: 1px solid var(--line);
@@ -707,12 +708,21 @@
           border 0.15s,
           box-shadow 0.15s;
       }
+      .field select {
+        appearance: none;
+        -webkit-appearance: none;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='%2338b6ff' d='M6 8 0 0h12z'/></svg>");
+        background-repeat: no-repeat;
+        background-position: right 14px center;
+        padding-right: 38px;
+      }
       .field input::placeholder,
       .field textarea::placeholder {
         color: #565b64;
       }
       .field input:focus,
-      .field textarea:focus {
+      .field textarea:focus,
+      .field select:focus {
         outline: none;
         border-color: var(--accent);
         box-shadow: 0 0 0 3px var(--accent-dim);
@@ -1470,6 +1480,18 @@
         <h2 class="sec-title">Apply Now</h2>
         <div class="form-box">
           <form>
+            <div class="field">
+              <label
+                >Which BBA Coach are you coming to this application from?
+                <span class="req">*</span></label
+              ><select name="coach" required>
+                <option value="" disabled selected>Select your coach</option>
+                <option value="Jase">Jase</option>
+                <option value="Carly">Carly</option>
+                <option value="Dom">Dom</option>
+                <option value="Erin">Erin</option>
+              </select>
+            </div>
             <div class="field">
               <label>Full Name <span class="req">*</span></label
               ><input
